@@ -26,9 +26,12 @@ how it works
 >client get reponse back from server.
 
 [2]. Render message and ui based on  Message type and id 
+>client get main two type of stream messages 
+1.chunk:custom/llm chunk(from get_stream_writer()/llm ) (stream_mode=['custom','messages])
+2.content:updated state after every graph node return  (stream_mode=['values'])
 >setMessage for stream chunk and setState for stream state from server
 >client render message and ui based on message type(based on message type we render ui) and id(for streaming chunk and partial response from agent)
->(important) client  render streaming chunk to bubble and after get state render and setMessage("") flush , and setState() render to ui
+>(important) client receive streaming chunk and aggregate to stream chunk then render in  bubble  and after get stream state , chunk message is flush render and  state messages
 
 
 [3]. graph run type   output = graph.stream(input , config, stream_mode )/.astream()/.astream_events()   
