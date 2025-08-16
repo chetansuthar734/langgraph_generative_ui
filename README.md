@@ -44,7 +44,7 @@ how it works
 >'messages', 'custom' mode is use for streaming ouput chunk from graph  (chunk from inside graph node)
 >'values','update' mode streaming state at itermeadiate graph step (when node return state )  step  
 
-[5]graph.invoke()     // not use when need real time stream
+[5]graph.invoke()     // not use when require real time stream
 >graph output state end of graph
 
 
