@@ -26,6 +26,7 @@ how it works
 >client get reponse back from server.
 
 [2]. Render message and ui based on  Message type and id 
+>if client is start new conversation then server send checkpoint id to client (or client also request with checkpoint_id to persist conversation or start new conversation)
 >client get main two type of stream messages 
 1.chunk:custom/llm chunk(from get_stream_writer()/llm ) (stream_mode=['custom','messages])
 2.content:updated state after every graph node return  (stream_mode=['values'])
