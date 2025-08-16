@@ -26,10 +26,10 @@ how it works
 >client get reponse back from server.
 
 [2]. Render message and ui based on  Message type and id 
->if client is start new conversation then server send checkpoint id to client (or client also request with checkpoint_id to persist conversation or start new conversation)
+>when client start new conversation (checkpoint_id=None) then server send checkpoint id to client (or client also request with checkpoint_id to persist conversation or start new conversation)
 >client get main two type of stream messages 
 1.chunk:custom/llm chunk(from get_stream_writer()/llm ) (stream_mode=['custom','messages])
-2.content:updated state after every graph node return  (stream_mode=['values'])
+2.content:client receive updated state after every node executed in graph (stream_mode=['values'])
 >setMessage for stream chunk and setState for stream state from server
 >client render message and ui based on message type(based on message type we render ui) and id(for streaming chunk and partial response from agent)
 >(important) client receive streaming chunk and aggregate to stream chunk then render in  bubble  and after get stream state , chunk message is flush render and  state messages
