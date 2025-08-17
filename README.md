@@ -20,7 +20,8 @@ how it works :
 [1].at backend when in invoke graph  ,for example  React agent tool call ,agent select tool calling based on user query then tool_node executing , tool node
 streaming ToolMessage with name of tool , (for streaming/partial response in ui ToolMessage(id=const) ), so when client receive ToolMessage based on tool name componet render and additional_kwargs data and content to fill ui component informations.
 
-
+alert: tool_call_id use for llm to recognize which tool_calls belong to ToolMessage, it necessary to provide when ToolMessage assign ,
+(tool_calls contain tool_call_id it use to pass to ToolMessage(tool_call_id="provide_by_llm") otherwise llm wrong interprete which ToolMessage belong to which tool_calls. 
 
 details explain  : how it work
  [1]. client(Reactjs app) and server    
