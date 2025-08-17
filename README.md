@@ -16,8 +16,13 @@ cd ./langgraph_fastAPI_server
 
  
 
-how it works 
+how it works :
+[1].at backend when in invoke graph  ,for example  React agent tool call ,agent select tool calling based on user query then tool_node executing , tool node
+streaming ToolMessage with name of tool , (for streaming/partial response in ui ToolMessage(id=const) ), so when client receive ToolMessage based on tool name componet render and additional_kwargs data and content to fill ui component informations.
 
+
+
+details explain  : how it work
  [1]. client(Reactjs app) and server    
  
 >client use EventSource() method to request server with input and checkpoint_id (here checkpoint_id use for persist state in  langgraph app across multiple invoke )
