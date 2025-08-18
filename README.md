@@ -5,22 +5,18 @@
 langgraph app  serve using fastapi server
 
 
+#use case :
+generative ui provide good user visualise data and text in ui format
+for code generation task code stream in code ui
+weather and news provide in intractive ui
+data represation in chart and table.
 
-
-for start application run locally
-pull repo 
-cd ./langgraph_fastAPI_server
-1.pip install -e .
-2.create .env file contains google_api_key and tavily_api_key
-3.uvicorn app:app       //run  awsgi server
-
- 
 
 how it works :
 [1].at backend when in invoke graph  ,for example  React agent tool call ,agent select tool calling based on user query then tool_node executing , tool node
 streaming ToolMessage with name of tool , (for streaming/partial response in ui ToolMessage(id=const) ), so when client receive ToolMessage based on tool name componet render and additional_kwargs data and content to fill ui component informations.
 
-alert: tool_call_id use for llm to recognize which tool_calls belong to ToolMessage, it necessary to provide when ToolMessage assign ,
+🔴alert: tool_call_id use for llm to recognize which tool_calls belong to ToolMessage, it necessary to provide make  ToolMessage(),
 (tool_calls contain tool_call_id it pass to ToolMessage(tool_call_id="provide_by_llm") otherwise llm wrong interprete which tool_calls belong to  ToolMessage answer. 
 
 details explain  : how it work
