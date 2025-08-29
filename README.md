@@ -14,9 +14,9 @@ data represation in chart and table.
 
 how it works :
 [1].at backend when in invoke graph  ,for example  React agent tool call ,agent select tool calling based on user query then tool_node executing , tool node
-streaming ToolMessage with name of tool , (for streaming/partial response in ui ToolMessage(id=const) ), so when client receive ToolMessage based on tool name componet render and additional_kwargs data and content to fill ui component informations.
+streaming AIMessage/ToolMessage with name of tool , (for streaming/partial response in ui AIMessage/ToolMessage(id=const) ), so when client receive Messages based on  messages.name componet render and additional_kwargs data and content to generate ui component informations.
 
-🔴alert: tool_call_id use for llm to recognize which tool_calls belong to ToolMessage, it necessary to provide make  ToolMessage(),
+🔴alert: In ToolMessage tool_call_id use for llm to recognize which ToolMessage belong to AI tool_calls request , it necessary to provide make  ToolMessage(),
 (tool_calls contain tool_call_id it pass to ToolMessage(tool_call_id="provide_by_llm") otherwise llm wrong interprete which tool_calls belong to  ToolMessage answer. 
 
 details explain  : how it work
