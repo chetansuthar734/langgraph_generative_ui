@@ -12,6 +12,19 @@ weather and news provide in intractive ui
 data represation in chart and table.
 
 
+
+
+
+useStream hook streamMode and streamSubgraphs
+
+#Note:if graph has multiple subgraph then graph invoke within stream subgraph is  True.
+thread = useStream()
+.....
+
+thread.sumbit({values:}, { options here streamMode:Array['mode'],streamSubggraphs:boolean } )
+
+
+
 how it works :
 [1].at backend when in invoke graph  ,for example  React agent tool call ,agent select tool calling based on user query then tool_node executing , tool node
 streaming AIMessage/ToolMessage with name of tool , (for streaming/partial response in ui AIMessage/ToolMessage(id=const) ), so when client receive Messages based on  messages.name componet render and additional_kwargs data and content to generate ui component informations.
